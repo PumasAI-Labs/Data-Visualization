@@ -26,9 +26,15 @@ This workshop is an introduction to **data visualization** in Julia using `Algeb
 
 ## Schedule
 
-| Time (HH:MM) | Activity | Description                              |
-| ------------ | -------- | ---------------------------------------- |
-| 00:00        | Setup    | Download files required for the workshop |
+| Time (HH:MM) | Activity            | Description                                 |
+|--------------|---------------------|---------------------------------------------|
+| 00:00        | Setup               | Download files required for the workshop    |
+| 00:05        | Overview            | Showcase `01-layers.jl`                     |
+| 00:15        | Mappings            | Showcase `02-mappings.jl`                   |
+| 00:30        | Geometries          | Showcase `03-geometries.jl`                 |
+| 00:40        | Grammar of graphics | Showcase `04-algebra.jl`                    |
+| 01:10        | Plot customization  | Showcase `05-customization.jl`              |
+| 01:20        | Closing remarks     | See if there are any questions and feedback |
 
 ## Get in touch
 
