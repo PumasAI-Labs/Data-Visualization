@@ -1,3 +1,6 @@
 # Python env
 env/
 .venv/
+
+# Ignore the plots that are saved in the examples
+*.png
