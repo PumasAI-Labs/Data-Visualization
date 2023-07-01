@@ -5,14 +5,24 @@ description: Workshop template for an introduction to data visualization with Al
 
 [![CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-sa/4.0/)
 
-Short summary about the workshop.
+This workshop is an introduction to **data visualization** in Julia using `AlgebraOfGraphics`. It covers the following topics:
+
+- `AlgebraOfGraphics` syntax.
+- Advanced mapping options.
+    - Use visual elements such as coloring and marker style to encode additional variables. 
+    - Faceting.
+- Geometries and statistical visualizations.
+    - Scatter plots, line plots, bar plots, error bars, box plots, and violin plots.
+    - Histograms, linear regression, smoothing curves, etc.
+- Grammar of graphics: use `*` and `+` to combine and superimpose layers.
+- Plot customization. 
 
 !!! success "Prerequisites"
 
     We recommend users being familiar with Julia syntax, especially variables and types.
 
     The formal requirements are the [Julia Syntax Workshop](https://pumasai-labs.github.io/Julia-Workshop/)
-    and it's prerequisites.
+    and its pre-requisites.
 
 ## Schedule
 
@@ -27,9 +37,7 @@ please send an email to <training@pumas.ai>.
 
 ## Authors
 
-- Author 1 - <email@example.com>
-- Author 2 - <email@example.com>
-- Author 3 - <email@example.com>
+- Juan José González Oneto - <j.oneto@pumas.ai>
 
 ## License
 
