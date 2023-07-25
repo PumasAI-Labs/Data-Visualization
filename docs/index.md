@@ -1,13 +1,13 @@
 ---
 title: Pumas-AI Data Visualization Workshop
-description: Workshop template for an introduction to data visualization with AlgebraOfGraphics.
+description: Workshop template for an introduction to data visualization with AlgebraOfGraphics.jl
 ---
 
 [![CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-sa/4.0/)
 
-This workshop is an introduction to **data visualization** in Julia using `AlgebraOfGraphics`. It covers the following topics:
+This workshop is an introduction to **data visualization** in Julia using `AlgebraOfGraphics.jl`. It covers the following topics:
 
-- `AlgebraOfGraphics` syntax.
+- `AlgebraOfGraphics.jl` syntax.
 - Advanced mapping options.
     - Use visual elements such as coloring and marker style to encode additional variables. 
     - Faceting.

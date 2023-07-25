@@ -6,7 +6,7 @@ title: Instructor's Notes for Pumas-AI Data Visualization Workshop
 
 Start with `01-layers.jl`, which covers the basic structure used to create a plot with `AlgebraOfGraphics.jl`: `data`, `mapping`, and `visual` layers.
 Begin by briefly explaining `PharmaDatasets.jl`, the source of data for the workshop. Next, go over the `data` function, which is the simplest layer, used to 
-inform `AoG` (short for `AlgebraOfGraphics.jl`) about the data source for the plot. After that, explain `mapping`, which is in charge of defining how that data 
+inform `AoG.jl` (short for `AlgebraOfGraphics.jl`) about the data source for the plot. After that, explain `mapping`, which is in charge of defining how that data 
 will be used in the plot. Lastly, cover the `visual` layer, which defines the type of plot to be created. Once you have explained all the layers, show how to 
 create a plot by combining them with the `*` operator (the use of `*` will be explained in more detail later in the lesson). Finally, showcase the `draw` 
 function, which is used to display plots. If you are running the code examples in JuliaHub, you can spend some time demonstrating how to use the plot 
@@ -20,24 +20,23 @@ example that used both `color` and `marker`. The next topic is faceting, which a
 `layout` keyword argument. 
 
 Afterward, cover the contents of `03-geometries.jl`. The code examples in this script focus on the use of `visual` and the various types of plots that can be 
-created with `AoG`. Begin by demonstrating how to create a bar plot and how the built-in function `expectation` can be useful for automatically generating a bar 
-plot that shows the mean values of a variable. It may also be helpful to explain the `histogram` function, which, as the name suggests, facilitates the creation 
-of histograms. Emphasize how using built-in functions like `expectation` and `histogram` reduces the need for data wrangling before plotting. After that, 
-cover the other geometries discussed in the script: `ScatterLines`, `Errorbars`, `BoxPlot`, and `Violin`. To conclude this segment of the workshop, highlight 
-that there are numerous other geometries available and demonstrate how participants can find them in 
+created with `AoG.jl`. Begin by demonstrating how to create a bar plot and how the built-in function `expectation` can be useful for automatically generating a 
+bar plot that shows the mean values of a variable. It may also be helpful to explain the `histogram` function, which, as the name suggests, facilitates the creation of histograms. Emphasize how using built-in functions like `expectation` and `histogram` reduces the need for data wrangling before plotting. After 
+that, cover the other geometries discussed in the script: `ScatterLines`, `Errorbars`, `BoxPlot`, and `Violin`. To conclude this segment of the workshop, 
+highlight that there are numerous other geometries available and demonstrate how participants can find them in 
 [`Makie.jl`'s documentation](https://docs.makie.org/stable/examples/plotting_functions/index.html#plotting_functions).
 
-The next part of the workshop will focus on using the `+` and `*` operators in `AoG`, and the related script is `04-algebra.jl`. Start by providing a brief 
+The next part of the workshop will focus on using the `+` and `*` operators in `AoG.jl`, and the related script is `04-algebra.jl`. Start by providing a brief 
 explanation of the `*` operator, which combines layers and has been used extensively in the previous code examples. Next, show how individual plots can be 
 superimposed with the `+` operator, allowing the creation of much more complex plots using different data sources. Next, use the examples to showcase that both 
 `*` and `+` obey the distributive law, enabling the superimposition of layers with a very intuitive and concise syntax. This part of the script should also 
 introduce the `linear` and `smooth` built-in functions, which allow plotting a linear regression and a smoothing line, respectively.
 
 
-The final script for the workshop is `05-customization.jl`, which focuses on plot customization in `AoG`. Begin by demonstrating how to customize axis labels 
+The final script for the workshop is `05-customization.jl`, which focuses on plot customization in `AoG.jl`. Begin by demonstrating how to customize axis labels 
 using the pair syntax (`:column_name => "display name"`) and how a similar syntax can be used to apply transformations and rename in one go (`:column_name => 
 function => "display name"`). Proceed to the next part of the script, which deals with axis customization using the `axis` keyword argument. Cover the 
-`NamedTuple` syntax used to pass arguments to `axis` and showcase the commonly used customization options through examples. Lastly, emphasize that both `AoG` 
+`NamedTuple` syntax used to pass arguments to `axis` and showcase the commonly used customization options through examples. Lastly, emphasize that both `AoG.jl` 
 and `Makie` offer *extensive* support for customization. Show participants how to explore more customization options in [`Makie.jl`'s 
 documentation](https://docs.makie.org/stable/examples/blocks/axis/index.html#attributes).
 
