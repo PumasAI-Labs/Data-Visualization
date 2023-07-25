@@ -32,9 +32,9 @@ data(demographics_df) *
 ### Scales
 plt_iv = data(iv_summary) *
             mapping(
-                :time => "Time (-)",
-                :conc_mean => "Concentration (-)";
-                color=:dose => nonnumeric => "Dose (-)" # Also applies to keyword arguments
+                :time => "Time (hours)",
+                :conc_mean => "Concentration (μg/L)";
+                color=:dose => nonnumeric => "Dose (mg)" # Also applies to keyword arguments
             ) *
             visual(ScatterLines)
 
@@ -90,7 +90,7 @@ draw(
 base_plt = data(demographics_df) *
     mapping(
         :AGE => "Age (years)",
-        :eGFR => "eGFR (-)"
+        :eGFR => "eGFR"
     )
 
 visuals = (
