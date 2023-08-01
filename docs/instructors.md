@@ -4,9 +4,15 @@ title: Instructor's Notes for Pumas-AI Data Visualization Workshop
 
 [![CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-sa/4.0/)
 
+It is a good starting point to ask if learners have experience with the "grammar of graphics" plotting approach.
+This could be either from R's `ggplot2` or Python's `plotnine`.
+Building upon users previous experiences is highly advisable in this workshop.
+If your experience intersects with the learner's experience,
+use analogies between these and `AoG.jl` (short for `AlgebraOfGraphics.jl`) whenever possible.
+In the specific case of `ggplot2`, you can refer learners to the `ggplot2` versus `AoG.jl` comparison table in the reference sheets.
 Start with `01-layers.jl`, which covers the basic structure used to create a plot with `AlgebraOfGraphics.jl`: `data`, `mapping`, and `visual` layers.
 Begin by briefly explaining `PharmaDatasets.jl`, the source of data for the workshop. Next, go over the `data` function, which is the simplest layer, used to 
-inform `AoG.jl` (short for `AlgebraOfGraphics.jl`) about the data source for the plot. After that, explain `mapping`, which is in charge of defining how that data 
+inform `AoG.jl` about the data source for the plot. After that, explain `mapping`, which is in charge of defining how that data 
 will be used in the plot. Lastly, cover the `visual` layer, which defines the type of plot to be created. Once you have explained all the layers, show how to 
 create a plot by combining them with the `*` operator (the use of `*` will be explained in more detail later in the lesson). Finally, showcase the `draw` 
 function, which is used to display plots. If you are running the code examples in JuliaHub, you can spend some time demonstrating how to use the plot 
