@@ -22,7 +22,7 @@ data(demographics_df) *
         :ISMALE => nonnumeric,
         :AGE
     ) *
-    AlgebraOfGraphics.expectation() |> draw # Both Pumas and AlgebraOfGraphics export expectation
+    AlgebraOfGraphics.expectation() |> draw # Both Pumas and AoG export expectation
 
 ## Tip: there is also a pre-built function for histograms
 data(demographics_df) *

@@ -27,7 +27,11 @@ example that used both `color` and `marker`. The next topic is faceting, which a
 
 Afterward, cover the contents of `03-geometries.jl`. The code examples in this script focus on the use of `visual` and the various types of plots that can be 
 created with `AoG.jl`. Begin by demonstrating how to create a bar plot and how the built-in function `expectation` can be useful for automatically generating a 
-bar plot that shows the mean values of a variable. It may also be helpful to explain the `histogram` function, which, as the name suggests, facilitates the creation of histograms. Emphasize how using built-in functions like `expectation` and `histogram` reduces the need for data wrangling before plotting. After 
+bar plot that shows the mean values of a variable. It may also be helpful to explain the `histogram` function, which, as the name suggests, facilitates the 
+creation of histograms. Emphasize how using built-in functions like `expectation` and `histogram` reduces the need for data wrangling before plotting. Users 
+will probably want to know why some built-in functions have to be qualified with `AlgebraOfGraphics` (for instance, `expectation` has to be used as 
+`AlgebraOfGraphics.expectation()` because both `Pumas` and `AlgebraOfGraphics` export the name `expectation`). Take this opportunity to provide a brief 
+explanation on name collisions in Julia and show the error message that appears when this is not taken into account. After 
 that, cover the other geometries discussed in the script: `ScatterLines`, `Errorbars`, `BoxPlot`, and `Violin`. To conclude this segment of the workshop, 
 highlight that there are numerous other geometries available and demonstrate how participants can find them in 
 [`Makie.jl`'s documentation](https://docs.makie.org/stable/examples/plotting_functions/index.html#plotting_functions).

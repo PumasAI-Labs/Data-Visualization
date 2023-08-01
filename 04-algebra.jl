@@ -40,4 +40,4 @@ data(demographics_df) *
         :AGE,
         :eGFR
     ) *
-    (visual(Scatter) + AlgebraOfGraphics.linear() + smooth()) |> draw
+    (visual(Scatter) + AlgebraOfGraphics.linear() + smooth()) |> draw # Both Pumas an AoG export linear

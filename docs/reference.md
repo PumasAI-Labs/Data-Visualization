@@ -18,6 +18,8 @@ should be used to instruct `AoG.jl` to interpret it as a categorical variable; o
 - `AoG.jl` supports various types of plots (geometries), which can be found in [`Makie.jl`'s documentation](https://docs.makie.org/stable/examples/plotting_functions/index.html#plotting_functions).
 - `AoG.jl` provides built-in functions that reduce the need for data wrangling or additional operations to generate commonly used plots. Examples include 
 `histogram`, used to create histograms, and `linear`, used to perform a linear regression and plot the results.
+- Some of the built-in function names collide with those exported by `Pumas` and `Makie.jl` (e.g. `linear` is also exported by `Pumas`). When that happens, you 
+must qualify the function as `AlgebraOfGraphics.<function name>` (e.g. `AlgebraOfGraphics.linear()`). 
 - The `+` operator can be used to superimpose layers in plots.
 - Both `*` and `+` adhere to the distributive law, enabling the creation of complex plots with a concise syntax. For instance, you can define multiple `visual`s 
 for the same `data` and `mapping` with `data_layer * mapping_layer * (visual1 + visual2 + visual3)` instead of defining the three plots separately and then 
