@@ -10,6 +10,7 @@ demographics_df = dataset("demographics_1")
 
 ## The data layer: specify the data source
 data_layer = data(demographics_df) # data(<DataFrame>)
+typeof(data_layer) # Layer type
 
 ## The mapping layer: how are we going to map our data in the plot
 mapping_layer = mapping(:AGE, :WEIGHT) # mapping(<x>, <y>, <z>)
