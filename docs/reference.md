@@ -20,6 +20,8 @@ should be used to instruct `AoG.jl` to interpret it as a categorical variable; o
 - `AoG.jl` supports various types of plots (geometries), which can be found in [`Makie.jl`'s documentation](https://docs.makie.org/stable/examples/plotting_functions/index.html#plotting_functions).
 - `AoG.jl` provides built-in functions that reduce the need for data wrangling or additional operations to generate commonly used plots. Examples include 
 `histogram`, used to create histograms, and `linear`, used to perform a linear regression and plot the results.
+- Some of the built-in function names collide with those exported by `Pumas` and `Makie.jl` (e.g. `linear` is also exported by `Pumas`). When that happens, you 
+must qualify the function as `AlgebraOfGraphics.<function name>` (e.g. `AlgebraOfGraphics.linear()`). 
 - The `+` operator can be used to superimpose layers in plots.
 - Both `*` and `+` adhere to the distributive law, enabling the creation of complex plots with a concise syntax. For instance, you can define multiple `visual`s 
 for the same `data` and `mapping` with `data_layer * mapping_layer * (visual1 + visual2 + visual3)` instead of defining the three plots separately and then 
@@ -57,12 +59,47 @@ of plots, such as `show_notch` for box plots.
 | Change a categorical variable's encoding values (just for display) | `renamer` | `renamer` can receive a series of `Pair`s specifying the dataset encoding value and the desired display name (e.g., `renamer(:val1 => "display value 1", :val2 => "display value 2")`) |
 | Add customization options specific to a geometry | `visual(<geometry>; kwargs)` | The accepted values for `kwargs` will depend on the type of plot that is being customized |
 
+## Comparison between `ggplot2` and `AoG.jl`
+
+| action                | `ggplot2`                                                    | `AoG.jl`                                                            |
+|-----------------------|--------------------------------------------------------------|---------------------------------------------------------------------|
+| Input data            | `ggplot(df)`                                                 | `data(df)`                                                          |
+| Map aesthetics        | `aes(...)`                                                   | `mapping(...)`                                                      |
+| Add geometries        | `geom_*(...)`                                                | `visual(...)`                                                       |
+| Combine layers        | `+`                                                          | `*`                                                                 |
+| Facetting             | `facet_[wrap\|grid](~ column)`                               | `mapping(...; [row\|col\|layout]=:column)`                          |
+| Customize scales      | `scale_*_manual()`                                           | `renamer(...)`                                                      |
+| Themes                | `theme_*(...)`                                               | `set_theme!(theme_*()); draw(plt)`                                  |
+| Customize axes labels | `[x\|y]lab("...")`                                           | `draw(plt, axis=(; [x\|y]label="..."))`                             |
+| Customize color       | `scale_[fill\|color]_*(...)`                                 | `draw(plt, palettes=(; color=...))` or `visual(..., colormap=...`") |
+| Save plot             | `ggsave("file.[png\|svg]")`                                  | `save("file.[png\|svg]", draw(plt))`                                |
+| Frequency             | `geom_bar()` or `stat_count()`                               | `frequency()`                                                       |
+| Histogram             | `geom_histogram` or `stat_bin()`                             | `histogram()`                                                       |
+| Density               | `geom_density` or `stat_density()`                           | `density()`                                                         |
+| Expectation/Mean      | `stat_summary(fun = "mean")`                                 | `expectation()`                                                     |
+| Smooth trend          | `stat_smooth` or `geom_smooth()`                             | `(visual(...) + smooth())`                                          |
+| Linear trend          | `stat_smooth(method = "lm")` or `geom_smooth(method = "lm")` | `(visual(...) + linear())`                                          |
+| Log scale             | `scale_[x\|y]_log10()`                                       | `draw(plt; axis=(; [x\|y]scale=log10))`                             |
 
 ## Glossary
 
 `Makie.jl`
 
-: A popular and powerful data visualization backend in Julia.
+: A popular and powerful data visualization backend written in Julia. It enables the creation of a wide range of visualizations, including publication-quality 
+vector graphics. We consider `Makie.jl` to be the present and future of plotting in Julia. Many tools, such as `AlgebraOfGraphics.jl`, are being developed with 
+`Makie.jl` as their foundation.
+
+Cairo and `CairoMakie.jl`
+
+: Cairo is an open-source graphics library used by `Makie.jl` via the `CairoMakie.jl` package. `CairoMakie.jl` is one of the interfaces supported by `Makie.jl`, 
+alongside `GLMakie.jl` and `WebGLMakie.jl`. This interface allows the creation of static plots, primarily in formats like SVG and PNG. This is the interface that
+most Pumas users will want to use and the one you should choose if unsure.
+
+OpenGL and `GLMakie.jl`
+
+: OpenGL, short for Open **G**raphics **L**ibrary, is another interface supported by `Makie.jl`. It facilitates rendering visualizations on a standalone screen 
+with support for interactivity such as clicking, dragging, and zooming. The `GLMakie.jl` package provides access to this interface. Keep in mind that plots 
+generated with `GLMakie.jl` will not be displayed in VS Code or Pluto notebooks.
 
 Grammar of Graphics
 
