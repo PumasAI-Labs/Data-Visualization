@@ -47,7 +47,7 @@ of plots, such as `show_notch` for box plots.
 | Create a visual layer | `visual` | Determines the type of plot that will be created |
 | Combine several `AoG.jl` layers | `*` | Layers are combined by "multiplying" them (e.g., `plt = data_layer * mapping_layer * visual_layer`) |
 | Display an `AoG.jl` plot | `draw` | `draw` can also contain many important customization options, such as `figure` and `axis` |
-| Save a plot | `save(<filename>, <result from draw>`) | The filename contain an appropriate file format, such as PNG, SVG or PDF when using `CairoMakie.jl`. You can also customize the image resolution using the `px_per_unit` (for PNG) and `pt_per_unit` (for SVG) keyword arguments |
+| Save a plot | `save(<filename>, <result from draw>`) | The filename must contain an appropriate file format, such as PNG, SVG or PDF when using `CairoMakie.jl`. You can also customize the image resolution using the `px_per_unit` (for PNG) and `pt_per_unit` (for SVG) keyword arguments |
 | Avoid that a categorical variable encoded with numbers will be interpreted as a continuous variable | `nonnumeric` | Used inside of a `mapping` call with `Pair` syntax (e.g., `kwarg = :column_name => nonnumeric`) |
 | Apply faceting by columns | `col` | Used as a keyword argument inside of a `mapping` call |
 | Apply faceting by rows | `row` | Used as a keyword argument inside of a `mapping` call |
