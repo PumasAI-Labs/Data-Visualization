@@ -82,7 +82,21 @@ of plots, such as `show_notch` for box plots.
 
 `Makie.jl`
 
-: A popular and powerful data visualization backend in Julia.
+: A popular and powerful data visualization backend written in Julia. It enables the creation of a wide range of visualizations, including publication-quality 
+vector graphics. We consider `Makie.jl` to be the present and future of plotting in Julia. Many tools, such as `AlgebraOfGraphics.jl`, are being developed with 
+`Makie.jl` as their foundation.
+
+Cairo and `CairoMakie.jl`
+
+: Cairo is an open-source graphics library used by `Makie.jl` via the `CairoMakie.jl` package. `CairoMakie.jl` is one of the interfaces supported by `Makie.jl`, 
+alongside `GLMakie.jl` and `WebGLMakie.jl`. This interface allows the creation of static plots, primarily in formats like SVG and PNG. This is the interface that
+most Pumas users will want to use and the one you should choose if unsure.
+
+OpenGL and `GLMakie.jl`
+
+: OpenGL, short for Open **G**raphics **L**ibrary, is another interface supported by `Makie.jl`. It facilitates rendering visualizations on a standalone screen 
+with support for interactivity such as clicking, dragging, and zooming. The `GLMakie.jl` package provides access to this interface. Keep in mind that plots 
+generated with `GLMakie.jl` will not be displayed in VS Code or Pluto notebooks.
 
 Grammar of Graphics
 
