@@ -34,4 +34,19 @@ plt = data(demographics_df) *
 
 draw(plt)
 
-# Save and download the plot
+# Saving plots
+
+## Use the save function
+save("my_plot.png", draw(plt)) # save(<filename>, <result from draw>)
+save("my_plot.svg", draw(plt)) # CairoMakie supports SVG and PDF files as well
+# Preview the plots by clicking on the resulting files
+
+### Resolution
+save("my_custom_plot.png", draw(plt); px_per_unit=2) # Double the resolution
+save("my_custom_plot.svg", draw(plt); pt_per_unit=2) # pt_per_unit for SVG files
+
+## Use the plot navigator (💾)
+draw(plt)
+
+# Download the plots
+## Right click + Download ...

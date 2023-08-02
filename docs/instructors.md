@@ -18,6 +18,8 @@ create a plot by combining them with the `*` operator (the use of `*` will be ex
 function, which is used to display plots. If you are running the code examples in JuliaHub, you can spend some time demonstrating how to use the plot 
 navigator. Users might find it particularly useful to learn how to access previously generated plots and how to save plots as images.
 
+The last part of this script focuses on how to save and download plots. Start by showing how to use the `save` function to save an image to the present working directory. Showcase the available file formats for `CairoMakie.jl`: PNG, SVG and PDF and the `px_per_unit` and `pt_per_unit` keyword arguments, which can be used to customize the image's resolution. As an alternative to `save`, show how to save plots using VS Code's plot navigator. Once plots are saved, show how to download them from the file explorer by right clicking on the file and the "Download ..." option. 
+
 Next, move on to the `02-mappings.jl` script, which focuses on using the `mapping` function. Start by explaining how to use the `color` and `marker` keyword 
 arguments to incorporate more variables into the plot. Use the provided `color` example to explain why sometimes `nonnumeric` is necessary for categorical 
 variables encoded with numbers. Conclude this part of the lesson by showing that `mapping` supports using multiple keyword arguments together, as shown in the 
