@@ -56,6 +56,27 @@ of plots, such as `show_notch` for box plots.
 | Change a categorical variable's encoding values (just for display) | `renamer` | `renamer` can receive a series of `Pair`s specifying the dataset encoding value and the desired display name (e.g., `renamer(:val1 => "display value 1", :val2 => "display value 2")`) |
 | Add customization options specific to a geometry | `visual(<geometry>; kwargs)` | The accepted values for `kwargs` will depend on the type of plot that is being customized |
 
+## Comparison between `ggplot2` and `AoG.jl`
+
+| action                | `ggplot2`                                                    | `AoG.jl`                                                            |
+|-----------------------|--------------------------------------------------------------|---------------------------------------------------------------------|
+| Input data            | `ggplot(df)`                                                 | `data(df)`                                                          |
+| Map aesthetics        | `aes(...)`                                                   | `mapping(...)`                                                      |
+| Add geometries        | `geom_*(...)`                                                | `visual(...)`                                                       |
+| Combine layers        | `+`                                                          | `*`                                                                 |
+| Facetting             | `facet_[wrap\|grid](~ column)`                               | `mapping(...; [row\|col\|layout]=:column)`                          |
+| Customize scales      | `scale_*_manual()`                                           | `renamer(...)`                                                      |
+| Themes                | `theme_*(...)`                                               | `set_theme!(theme_*()); draw(plt)`                                  |
+| Customize axes labels | `[x\|y]lab("...")`                                           | `draw(plt, axis=(; [x\|y]label="..."))`                             |
+| Customize color       | `scale_[fill\|color]_*(...)`                                 | `draw(plt, palettes=(; color=...))` or `visual(..., colormap=...`") |
+| Save plot             | `ggsave("file.[png\|svg]")`                                  | `save("file.[png\|svg]", draw(plt))`                                |
+| Frequency             | `geom_bar()` or `stat_count()`                               | `frequency()`                                                       |
+| Histogram             | `geom_histogram` or `stat_bin()`                             | `histogram()`                                                       |
+| Density               | `geom_density` or `stat_density()`                           | `density()`                                                         |
+| Expectation/Mean      | `stat_summary(fun = "mean")`                                 | `expectation()`                                                     |
+| Smooth trend          | `stat_smooth` or `geom_smooth()`                             | `(visual(...) + smooth())`                                          |
+| Linear trend          | `stat_smooth(method = "lm")` or `geom_smooth(method = "lm")` | `(visual(...) + linear())`                                          |
+| Log scale             | `scale_[x\|y]_log10()`                                       | `draw(plt; axis=(; [x\|y]scale=log10))`                             |
 
 ## Glossary
 
