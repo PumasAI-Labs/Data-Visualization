@@ -1,24 +1,40 @@
 ---
-title: Pumas-AI Workshop PLACEHOLDER
-description: CHANGE ME.
+title: Pumas-AI Data Visualization Workshop
+description: Workshop template for an introduction to data visualization with AlgebraOfGraphics.jl
 ---
 
 [![CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-sa/4.0/)
 
-Short summary about the workshop.
+This workshop is an introduction to **data visualization** in Julia using `AlgebraOfGraphics.jl`. It covers the following topics:
+
+- `AlgebraOfGraphics.jl` syntax.
+- Advanced mapping options.
+    - Use visual elements such as coloring and marker style to encode additional variables. 
+    - Faceting.
+- Geometries and statistical visualizations.
+    - Scatter plots, line plots, bar plots, error bars, box plots, and violin plots.
+    - Histograms, linear regression, smoothing curves, etc.
+- Grammar of graphics: use `*` and `+` to combine and superimpose layers.
+- Plot customization. 
 
 !!! success "Prerequisites"
 
-    This workshop does PLACEHOLDER and PLACEHOLDER.
-    We recommend users being familiar with PLACEHOLDER, especially PLACEHOLDER.
+    We recommend users being familiar with Julia syntax, especially variables and types.
 
-    The formal requirements are the PLACEHOLDER WORKSHOP WITH LINK.
+    The formal requirements are the [Julia Syntax Workshop](https://pumasai-labs.github.io/Julia-Workshop/)
+    and its pre-requisites.
 
 ## Schedule
 
-| Time (HH:MM) | Activity | Description                              |
-| ------------ | -------- | ---------------------------------------- |
-| 00:00        | Setup    | Download files required for the workshop |
+| Time (HH:MM) | Activity            | Description                                 |
+|--------------|---------------------|---------------------------------------------|
+| 00:00        | Setup               | Download files required for the workshop    |
+| 00:05        | Overview            | Showcase `01-layers.jl`                     |
+| 00:15        | Mappings            | Showcase `02-mappings.jl`                   |
+| 00:30        | Geometries          | Showcase `03-geometries.jl`                 |
+| 00:40        | Grammar of graphics | Showcase `04-algebra.jl`                    |
+| 01:10        | Plot customization  | Showcase `05-customization.jl`              |
+| 01:20        | Closing remarks     | See if there are any questions and feedback |
 
 ## Get in touch
 
@@ -27,9 +43,7 @@ please send an email to <training@pumas.ai>.
 
 ## Authors
 
-- Author 1 - <email@example.com>
-- Author 2 - <email@example.com>
-- Author 3 - <email@example.com>
+- Juan José González Oneto - <j.oneto@pumas.ai>
 
 ## License
 
