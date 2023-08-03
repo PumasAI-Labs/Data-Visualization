@@ -101,7 +101,7 @@ OpenGL and `GLMakie.jl`
 with support for interactivity such as clicking, dragging, and zooming. The `GLMakie.jl` package provides access to this interface. Keep in mind that plots 
 generated with `GLMakie.jl` will not be displayed in VS Code or Pluto notebooks.
 
-Grammar of Graphics
+Grammar of Graphics (check Wilkinson, Leland. The grammar of graphics. Springer Berlin Heidelberg, 2012.) 
 
 : The Grammar of Graphics is a versatile approach to data visualization, where plots are constructed using algebraic expressions. It allows for flexible 
 creation of visuals by specifying data, aesthetics, and geometric elements as modular components.
