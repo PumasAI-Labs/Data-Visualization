@@ -4,7 +4,7 @@ using CairoMakie # Required (backend)
 
 # Get our sample datasets
 using PharmaDatasets
-demographics_df = dataset("demographics_1") 
+demographics_df = dataset("demographics_1")
 
 # AlgebraOfGraphics plots are created using layers
 
@@ -25,12 +25,7 @@ plt = data_layer * mapping_layer * visual_layer
 draw(plt)
 
 # It is much more common to define the plot in a single expression
-plt = data(demographics_df) *
-        mapping(
-            :AGE,
-            :WEIGHT
-        ) *
-        visual(Scatter)
+plt = data(demographics_df) * mapping(:AGE, :WEIGHT) * visual(Scatter)
 
 draw(plt)
 
@@ -42,8 +37,8 @@ save("my_plot.svg", draw(plt)) # CairoMakie supports SVG and PDF files as well
 # Preview the plots by clicking on the resulting files
 
 ### Resolution
-save("my_custom_plot.png", draw(plt); px_per_unit=2) # Double the resolution
-save("my_custom_plot.svg", draw(plt); pt_per_unit=2) # pt_per_unit for SVG files
+save("my_custom_plot.png", draw(plt); px_per_unit = 2) # Double the resolution
+save("my_custom_plot.svg", draw(plt); pt_per_unit = 2) # pt_per_unit for SVG files
 
 ## Use the plot navigator (💾)
 draw(plt)
