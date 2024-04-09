@@ -10,35 +10,35 @@ data(demographics_df) * mapping(:AGE, :WEIGHT) * visual(Scatter) |> draw # The a
 # We can customize axis labels with =>
 data(demographics_df) *
 mapping(
-  :AGE => "Age (years)", # :column_name => "display name"
-  :WEIGHT => "Weight (kg)",
+    :AGE => "Age (years)", # :column_name => "display name"
+    :WEIGHT => "Weight (kg)",
 ) *
 visual(Scatter) |> draw
 
 ## Tip: you can also use this syntax to apply transformations
 data(demographics_df) *
 mapping(
-  :AGE => round => "Age (years)", # :column_name => function => "display name"
-  :WEIGHT => (i -> i * 2.2) => "Weight (lb)",
+    :AGE => round => "Age (years)", # :column_name => function => "display name"
+    :WEIGHT => (i -> i * 2.2) => "Weight (lb)",
 ) *
 visual(Scatter) |> draw
 
 ## Other customizations
 ### Scales
 plt_iv =
-  data(iv_summary) *
-  mapping(
-    :time => "Time (hours)",
-    :conc_mean => "Concentration (μg/L)";
-    color = :dose => nonnumeric => "Dose (mg)", # Also applies to keyword arguments
-  ) *
-  visual(ScatterLines)
+    data(iv_summary) *
+    mapping(
+        :time => "Time (hours)",
+        :conc_mean => "Concentration (μg/L)";
+        color = :dose => nonnumeric => "Dose (mg)", # Also applies to keyword arguments
+    ) *
+    visual(ScatterLines)
 
 draw(plt_iv) # Same plot as before
 
 draw(plt_iv; axis = (; # NamedTuple
-  yscale = log10 # We now added a logarithmic scale
-  # Also works for xscale
+    yscale = log10 # We now added a logarithmic scale
+    # Also works for xscale
 ))
 
 ## Ticks
@@ -46,13 +46,13 @@ draw(plt_iv; axis = (; yscale = log10, yticks = [1, 10, 100], xticks = 0:2:24))
 
 ## Title
 draw(
-  plt_iv;
-  axis = (;
-    yscale = log10,
-    yticks = [1, 10, 100],
-    xticks = 0:2:24,
-    title = "Mean concentration profile for each dose level",
-  ),
+    plt_iv;
+    axis = (;
+        yscale = log10,
+        yticks = [1, 10, 100],
+        xticks = 0:2:24,
+        title = "Mean concentration profile for each dose level",
+    ),
 )
 
 # There are many more options: 
@@ -71,8 +71,8 @@ draw(plt_iv; palettes = (; color = [:navyblue, :limegreen, :coral]))
 base_plt = data(demographics_df) * mapping(:AGE => "Age (years)", :eGFR => "eGFR")
 
 visuals = (
-  visual(Scatter; color = :grey, markersize = 10, strokewidth = 0.5) +
-  AlgebraOfGraphics.linear() * visual(; color = :navyblue, linestyle = :dash)
+    visual(Scatter; color = :grey, markersize = 10, strokewidth = 0.5) +
+    AlgebraOfGraphics.linear() * visual(; color = :navyblue, linestyle = :dash)
 )
 
 plt_reg = base_plt * visuals
@@ -96,13 +96,13 @@ visual(Scatter) |> draw
 sex_renamer = renamer(0 => "Female", 1 => "Male")
 
 plt_rename =
-  data(demographics_df) *
-  mapping(
-    :AGE,
-    :WEIGHT;
-    color = :ISMALE => sex_renamer => "Sex", # nonnumeric is no longer needed
-  ) *
-  visual(Scatter)
+    data(demographics_df) *
+    mapping(
+        :AGE,
+        :WEIGHT;
+        color = :ISMALE => sex_renamer => "Sex", # nonnumeric is no longer needed
+    ) *
+    visual(Scatter)
 draw(plt_rename)
 
 ## Tip: you can customize the legend
@@ -111,9 +111,9 @@ draw(plt_rename; legend = (; position = :top, markersize = 15, titleposition = :
 ## It also works for faceting
 data(demographics_df) *
 mapping(
-  :AGE,
-  :WEIGHT;
-  col = :ISMALE => sex_renamer => "Sex", # Works for col, row, layout
+    :AGE,
+    :WEIGHT;
+    col = :ISMALE => sex_renamer => "Sex", # Works for col, row, layout
 ) *
 visual(Scatter) |> draw
 
@@ -122,6 +122,6 @@ draw(plt_subjects) # Somewhat small
 
 ## Increase the resolution
 draw(plt_subjects; figure = (;
-  resolution = (2000, 1500),
-  fontsize = 28, # We often need to increase the font size when we increase the resolution
+    resolution = (2000, 1500),
+    fontsize = 28, # We often need to increase the font size when we increase the resolution
 ))

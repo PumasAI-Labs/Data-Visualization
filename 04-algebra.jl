@@ -4,20 +4,20 @@ include("03-geometries.jl")
 
 # Mean concentration on top of all concentration profiles for each dose level
 plt_mean =
-  data(iv_summary) *
-  mapping(:time, :conc_mean; layout = :dose => nonnumeric) *
-  visual(ScatterLines)
+    data(iv_summary) *
+    mapping(:time, :conc_mean; layout = :dose => nonnumeric) *
+    visual(ScatterLines)
 draw(plt_mean) # So far we only have the mean concentration profiles
 
 plt_all =
-  data(df_iv) *
-  mapping(
-    :time,
-    :conc;
-    layout = :dose => nonnumeric,
-    group = :id => nonnumeric, # Required
-  ) *
-  visual(ScatterLines; color = (:grey, 0.5)) # We will talk more about customization later
+    data(df_iv) *
+    mapping(
+        :time,
+        :conc;
+        layout = :dose => nonnumeric,
+        group = :id => nonnumeric, # Required
+    ) *
+    visual(ScatterLines; color = (:grey, 0.5)) # We will talk more about customization later
 draw(plt_all) # Here we only have all the concentration profiles
 
 # We can add both plots
